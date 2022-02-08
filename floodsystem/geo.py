@@ -16,7 +16,7 @@ def stations_by_distance(stations, p):
 
     #inserting in to the list the station names, towns, and distance away from a point p
     for i in stations:
-        listStations.append((i.name, haversine(i.coord, p, unit=Unit.KILOMETERS)))
+        listStations.append((i, haversine(i.coord, p, unit=Unit.KILOMETERS)))
 
     #sorting the list by their distance away from a point p
     sortedList = sorted_by_key(listStations, 1)
