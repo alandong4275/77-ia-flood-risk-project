@@ -23,6 +23,19 @@ def stations_by_distance(stations, p):
 
     return sortedList
 
+def stations_within_radius(stations, centre, r):
+    '''returns a list of stations within a radius of a point, sorted alphabetically'''
+    #creating a list
+    stationsInRadius = []
+    #finding the radius of each station from the centre
+    for i in stations:
+        radius = haversine(i.coord, centre, unit=Unit.KILOMETERS)
+    #insterting the stations with radius smaller than r in to the list
+        if radius < r:
+            stationsInRadius.append(i)
+
+    return stationsInRadius
+
 def rivers_with_station(stations):
     """Returns a list of the names of rivers with a monitoring station"""
 
