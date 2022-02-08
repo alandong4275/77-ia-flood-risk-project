@@ -42,3 +42,30 @@ def stations_by_river(stations):
         rivers[river].sort()
 
     return rivers
+
+def rivers_by_station_number(stations, N):
+    """Returns a list of the N rivers with the greatest number of monitoring stations 
+    and their number of monitoring stations"""
+
+    # Creates a dictionary of rivers that map to their number of monitoring stations
+    rivers = dict()
+    for station in stations:
+        # Increments number of monitoring stations by 1 for each new monitoring station by a given river
+        if station.river is not None:
+            if station.river in rivers.keys():
+                rivers[station.river] += 1
+            else:
+                rivers[station.river] = 1
+        else:
+            pass
+
+    # Converts dictionary into list of tuples
+    river_list = [(key, value) for key, value in rivers.items()]
+
+    # Sorts list by descending number of monitoring stations
+    sorted_rivers = sorted_by_key(river_list, 1, reverse=True)
+
+    # Truncates list to initial N items
+    greatest_rivers = sorted_rivers[:N]
+
+    return greatest_rivers
