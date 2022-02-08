@@ -21,3 +21,24 @@ def rivers_with_station(stations):
     sorted_rivers = sorted(rivers)
 
     return sorted_rivers
+
+def stations_by_river(stations):
+    """Returns a dictionary mapping the names of rivers with a list of their monitoring station"""
+
+    # Creates a dictionary of rivers that map to a list of their monitoring stations
+    rivers = dict()
+    for station in stations:
+        # Adds names of monitoring stations into the list under each river
+        if station.river is not None:
+            if station.river in rivers.keys():
+                rivers[station.river].append(station.name)
+            else:
+                rivers[station.river] = [station.name]
+        else:
+            pass
+
+    # Sorts the lists of monitoring stations alphabetically
+    for river in rivers.keys():
+        rivers[river].sort()
+
+    return rivers
