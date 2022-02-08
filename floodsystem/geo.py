@@ -7,6 +7,21 @@ geographical data.
 """
 
 from .utils import sorted_by_key  # noqa
+from haversine import haversine, Unit
+
+def stations_by_distance(stations, p):
+    '''returns a list of stations sorted by how far away they are from the point p'''
+    #creating a list
+    listStations = []
+
+    #inserting in to the list the station names, towns, and distance away from a point p
+    for i in stations:
+        listStations.append((i.name, haversine(i.coord, p, unit=Unit.KILOMETERS)))
+
+    #sorting the list by their distance away from a point p
+    sortedList = sorted_by_key(listStations, 1)
+
+    return sortedList
 
 def rivers_with_station(stations):
     """Returns a list of the names of rivers with a monitoring station"""
