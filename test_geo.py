@@ -13,7 +13,7 @@ def test_stations_by_distance():
     sorted_stations = geo.stations_by_distance(stations, p)
 
     for index in range(0, len(sorted_stations)):
-        assert haversine(sorted_stations[index].coord, p, unit=Unit.KILOMETERS) < haversine(sorted_stations[index+1].coord, p, unit=Unit.KILOMETERS)
+        assert haversine(sorted_stations[index][1], p, unit=Unit.KILOMETERS) < haversine(sorted_stations[index+1][1], p, unit=Unit.KILOMETERS)
 
 
 def test_stations_within_radius():
@@ -24,7 +24,7 @@ def test_stations_within_radius():
     s_w_r = geo.stations_within_radius(stations, centre, r)
 
     for index in range(0, len(s_w_r)):
-        assert haversine(s_w_r[index], centre) < 10
+        assert haversine(s_w_r[index].coord, centre, unit=Unit.KILOMETERS) < 10
 
 def test_rivers_with_station():
     # Build list of stations
