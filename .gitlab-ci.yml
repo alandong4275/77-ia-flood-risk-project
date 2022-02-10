@@ -10,7 +10,8 @@ test:
   # - python -m flake8 .
 
     # Run unit tests
-  - python -m pytest .
+  - python -m pytest test_geo.py
+  - python -m pytest test_station.py
 
   # Run deliverables. Add your deliverables to the test system here.
   - python Task1A.py
