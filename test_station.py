@@ -62,4 +62,4 @@ def test_inconsistent_typical_range_stations():
     s = [s1, s2]
 
     inconsistent_s = inconsistent_typical_range_stations(s)
-    assert len(inconsistent_s) == 0
+    assert len(inconsistent_s) == 1
