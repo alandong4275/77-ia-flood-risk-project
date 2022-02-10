@@ -51,7 +51,7 @@ def rivers_with_station(stations):
     return sorted_rivers
 
 def stations_by_river(stations):
-    """Returns a dictionary mapping the names of rivers with a list of their monitoring station"""
+    """Returns a dictionary mapping the names of rivers with a list of their monitoring stations"""
 
     # Creates a dictionary of rivers that map to a list of their monitoring stations
     rivers = dict()

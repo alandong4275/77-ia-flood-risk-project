@@ -27,3 +27,34 @@ def test_stations_within_radius():
     for index in range(0, len(s_w_r)):
         assert haversine(s_w_r[index], centre) < 10
 
+def test_rivers_with_station():
+    # Build list of stations
+    stations = build_station_list()
+    no_of_rivers = 0
+
+    for station in stations:
+        if station.river is not None:
+            no_of_rivers += 1
+
+    assert len(geo.rivers_with_station(stations)) == no_of_rivers
+
+def test_stations_by_river():
+    # Build list of stations
+    stations = build_station_list()
+
+    rivers = geo.stations_by_river(stations)
+    for r in rivers.keys():
+        for s in rivers[r]:
+            for station in stations:
+                if station.name == s:
+                    assert station.river == r
+
+def test_rivers_by_station_number():
+    # Build list of stations
+    stations = build_station_list()
+
+    greatest_r = geo.rivers_by_station_number(stations, 10)
+
+    assert len(greatest_r) == 10
+    for i in range(0, greatest_r):
+        assert greatest_r[i][1] > greatest_r[i+1][1]
