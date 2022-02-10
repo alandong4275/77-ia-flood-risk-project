@@ -42,8 +42,8 @@ def test_typical_range_consistent():
     s1 = MonitoringStation(s_id, m_id, label, coord, trange1, river, town)
     s2 = MonitoringStation(s_id, m_id, label, coord, trange2, river, town)
 
-    assert s1.typical_range_consistent == True
-    assert s2.typical_range_consistent == False
+    assert s1.typical_range_consistent() == True
+    assert s2.typical_range_consistent() == False
 
 def test_inconsistent_typical_range_stations():
 
