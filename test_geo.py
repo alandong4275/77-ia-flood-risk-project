@@ -13,7 +13,7 @@ def test_stations_by_distance():
     sorted_stations = geo.stations_by_distance(stations, p)
 
     for index in range(0, len(sorted_stations)):
-        assert sorted_stations[index][1] < sorted_stations[index+1][1]
+        assert sorted_stations[index][1] <= sorted_stations[index+1][1]
 
 
 def test_stations_within_radius():
@@ -52,4 +52,4 @@ def test_rivers_by_station_number():
 
     assert len(greatest_r) == 10
     for i in range(0, len(greatest_r)):
-        assert greatest_r[i][1] > greatest_r[i+1][1]
+        assert greatest_r[i][1] >= greatest_r[i+1][1]

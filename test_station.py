@@ -38,7 +38,7 @@ def test_typical_range_consistent():
     river = "River X"
     town = "My Town"
 
-    trange2 = (2, -1)
+    trange2 = (2.0, -1.0)
     s1 = MonitoringStation(s_id, m_id, label, coord, trange1, river, town)
     s2 = MonitoringStation(s_id, m_id, label, coord, trange2, river, town)
 
