@@ -1,4 +1,3 @@
-from sqlalchemy import true
 from floodsystem.station import MonitoringStation
 from floodsystem import geo
 from floodsystem.stationdata import build_station_list
