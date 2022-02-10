@@ -10,7 +10,7 @@ test:
   # - python -m flake8 .
 
     # Run unit tests
-  - python -m pytest -v .
+  - python -m pytest .
 
   # Run deliverables. Add your deliverables to the test system here.
   - python Task1A.py
