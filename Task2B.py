@@ -11,8 +11,8 @@ def run():
     update_water_levels(stations)
 
     # Print stations with relative water levels over tolerance
-    for station in stations_level_over_threshold(stations, 0.8):
-        print(station + " " + station.relative_water_level())
+    for station_tuple in stations_level_over_threshold(stations, 0.8):
+        print(station_tuple[0] + " " + station_tuple[0].relative_water_level())
 
 if __name__ == "__main__":
     print("*** Task 2B: CUED Part IA Flood Warning System ***")
