@@ -20,4 +20,5 @@ test:
   - python Task1F.py
 24
   - python Task2A.py
+  - python Task2B.py
   - python Task2D.py
