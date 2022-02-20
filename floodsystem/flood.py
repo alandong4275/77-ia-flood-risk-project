@@ -6,9 +6,9 @@ def stations_level_over_threshold(stations, tol):
     
     s_over_threshold = []
     for station in stations:
-        level = station.relative_water_level()
-        if station.typical_range_consistent and level > tol:
-            s_over_threshold.append((station, level))
+        if station.typical_range_consistent:
+            if station.relative_water_level() > tol:
+                s_over_threshold.append((station, station.relative_water_level()))
 
     sorted_list = sorted_by_key(s_over_threshold, 1)
     return sorted_list
