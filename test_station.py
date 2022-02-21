@@ -63,3 +63,6 @@ def test_inconsistent_typical_range_stations():
 
     inconsistent_s = inconsistent_typical_range_stations(s)
     assert len(inconsistent_s) == 1
+
+def test_relative_water_level():
+    assert True
