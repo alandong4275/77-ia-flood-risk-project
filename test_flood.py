@@ -16,5 +16,5 @@ def test_stations_level_over_threshold():
     s1 = MonitoringStation(s_id, m_id, label, coord, trange1, river, town)
 
     # Print stations with relative water levels over tolerance
-    if len(stations_level_over_threshold(s1, 0.8)) >= 0:
+    if len(stations_level_over_threshold([s1], 0.8)) >= 0:
         assert True
