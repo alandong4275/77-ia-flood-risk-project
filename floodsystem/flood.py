@@ -18,7 +18,7 @@ def stations_highest_rel_level(stations, N):
 
     stationsWithHightWater = []
     for station in stations:
-        stationsWithHightWater.append((stations.station_id, station.relative_water_level()))
+        stationsWithHightWater.append((station.station_id, station.relative_water_level()))
     
     sortedlist = sorted_by_key(stationsWithHightWater, 1, reverse = True)[:N]
 
