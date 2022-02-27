@@ -9,8 +9,8 @@ def plot_water_level_with_fit(station, dates, levels, p):
     poly, d0 = anal.polyfit(dates, levels, p)
     x = plt.dates.date2num(dates)
     y = levels
-    plt.plot(x - d0, y, '.')
-    x1 = np.linspace(0, x[-1] - d0, 30)
+    plt.plot(x + d0, y, '.')
+    x1 = np.linspace(0, x[-1] + d0, 30)
     plt.plot(x1, poly(x1))
     plt.xlabel = station.measure_id
     plt.show
@@ -19,6 +19,8 @@ def plot_water_levels(station, dates, levels):
     """Plots water levels of station against time, with typical high, low values"""
     # Plot
     plt.plot(dates, levels)
+    plt.axhline(y=station.typical_range[0], color='r', linestyle='-')
+    plt.axhline(y=station.typical_range[1], color='r', linestyle='-')
 
     # Add axis labels, rotate date labels and add plot title
     plt.xlabel('date')
