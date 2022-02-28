@@ -13,4 +13,4 @@ def plot_water_level_with_fit(station, dates, levels, p):
     x1 = np.linspace(0, x[-1] - d0, 30)
     plt.plot(x1, poly(x1))
     plt.xlabel = station.measure_id
-    plt.show
+    plt.show()

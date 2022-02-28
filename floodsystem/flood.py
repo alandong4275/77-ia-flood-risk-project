@@ -1,4 +1,4 @@
-from utils import sorted_by_key
+from floodsystem.utils import sorted_by_key
 
 def stations_level_over_threshold(stations, tol):
     """Returns a list of tuples of stations with latest relative water levels over tol and their relative water levels"""
@@ -18,8 +18,11 @@ def stations_highest_rel_level(stations, N):
 
     stationsWithHightWater = []
     for station in stations:
-        stationsWithHightWater.append((stations.station_id, station.relative_water_level()))
+        if station.relative_water_level() == None:
+            continue
+        else:
+            stationsWithHightWater.append((station, station.relative_water_level()))
     
-    sortedlist = sorted_by_key(stationsWithHightWater, 1, reverse = True)[:N]
+    sortedlist = (sorted_by_key(stationsWithHightWater, 1, reverse = True))[:N]
 
     return sortedlist
