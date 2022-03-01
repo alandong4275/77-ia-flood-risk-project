@@ -14,14 +14,14 @@ def stations_level_over_threshold(stations, tol):
     return sorted_list
 
 def stations_highest_rel_level(stations, N):
-    """Returns a list of the N stations at which the water level, relative to the typical range, is highest"""
+    """returns a list of the N stations at which the water level, relative to the typical range, is highest"""
 
-    highest_stations = []
+    stationsWithHightWater = []
     for station in stations:
         if station.latest_level != None:
             if station.typical_range_consistent():
-                highest_stations.append((station, station.relative_water_level()))
+                stationsWithHightWater.append((station, station.relative_water_level()))
     
-    sortedlist = sorted_by_key(highest_stations, 1, reverse = True)[:N]
+    sortedlist = sorted_by_key(stationsWithHightWater, 1, reverse = True)[:N]
 
     return sortedlist
