@@ -3,7 +3,7 @@ from floodsystem.flood import stations_level_over_threshold
 from floodsystem.flood import stations_highest_rel_level
 
 def run():
-    """Requirements for Task 2B"""
+    """Requirements for Task 2C"""
 
     # Build list of stations
     stations = build_station_list()
@@ -15,5 +15,5 @@ def run():
         print(station[0].name, station[1])
 
 if __name__ == "__main__":
-    print("*** Task 2C: CUED Part IA Flood Warning System ***")
+    print("\n *** Task 2C: CUED Part IA Flood Warning System *** \n")
     run()
