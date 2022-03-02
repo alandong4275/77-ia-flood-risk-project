@@ -7,10 +7,11 @@ def run():
 
     # Build list of stations
     stations = build_station_list()
+    # Update the lateset level data for all stations
     update_water_levels(stations)
-
+    # Using the function from flood to create a list with the 10 stations with the highest relative water level
     highest10 = (stations_highest_rel_level(stations, 10))
-
+    # printing the name of the station and the relative water level for each object in "highest10"
     for station in highest10:
         print(station[0].name, station[1])
 
