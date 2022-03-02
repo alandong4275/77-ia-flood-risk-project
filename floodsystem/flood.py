@@ -23,7 +23,7 @@ def stations_highest_rel_level(stations, N):
         if station.latest_level != None:
             if station.typical_range_consistent():
                 stationsWithHightWater.append((station, station.relative_water_level()))
-    #sorts the list by relative water level from largest to smallest
+    #sorts the list by relative water level from largest to smallest up to N objects
     sortedlist = sorted_by_key(stationsWithHightWater, 1, reverse = True)[:N]
 
     return sortedlist
